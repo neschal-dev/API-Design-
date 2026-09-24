@@ -1,0 +1,26 @@
+// use prisma-8
+
+enum Category {
+  @@type("pg/text@1")
+  Electronics
+  Furniture
+  Decoration
+  Food
+  Others
+}
+
+model Product {
+  id          Uuid           @id @default(uuid())
+  title       String
+  description String
+  category    Category
+  stock       Int
+  price       Numeric(10, 2)
+  createdAt   TimestamptzString @default(now()) @map("created_at")
+  updatedAt   temporal.updatedAtString() @map("updated_at")
+
+  @@index([category])
+  @@index([price])
+  @@index([createdAt])
+  @@map("products")
+}

@@ -1,0 +1,29 @@
+{
+  "name": "prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "build": "tsc",
+    "start:prod": "node dist/src/server.js",
+    "contract:emit": "prisma contract emit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "type": "module",
+  "dependencies": {
+    "@prisma/orm-postgres": "^8.0.0-rc.11",
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@prisma/cli-engine": "^0.4.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.2",
+    "prisma": "^8.0.0-rc.15",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
