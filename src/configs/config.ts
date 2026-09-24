@@ -5,7 +5,7 @@ const required = (name: string) => {
   if (!value) {
     throw new Error(`Missing required environment variable: ${name}`);
   }
-  return;
+  return value;
 };
 export const common = {
   PORT: Number(process.env.PORT),
